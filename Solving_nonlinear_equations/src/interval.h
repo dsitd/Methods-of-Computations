@@ -10,7 +10,7 @@ class Interval {
     double left_border, right_border;
     std::vector<std::pair<double, double>> segments;
 
-    void separateRoots(const Equation& equation) {
+    void separateRoots(const Equation &equation) {
         double offset = (right_border - left_border) / static_cast<double>(amount_splitting), point = left_border;
         double multiplication_border;
 
@@ -24,8 +24,9 @@ class Interval {
             point += offset;
         }
     }
+
 public:
-    Interval(double left_border, double right_border, int32_t amount_splitting, const Equation& equation)
+    Interval(double left_border, double right_border, int32_t amount_splitting, const Equation &equation)
             : left_border(left_border), right_border(right_border), amount_splitting(amount_splitting) {
 
         if (left_border > right_border) {

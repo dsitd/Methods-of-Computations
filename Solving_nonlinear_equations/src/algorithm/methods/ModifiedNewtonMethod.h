@@ -7,8 +7,10 @@
 class ModifiedNewtonMethod : public algorithm {
 public:
     ModifiedNewtonMethod(const Equation &equation);
+
     ~ModifiedNewtonMethod() override = default;
-    [[nodiscard]] double solve(const std::pair<double, double>& segment, double epsilon) const override;
+
+    [[nodiscard]] double solve(const std::pair<double, double> &segment, double epsilon) const override;
 };
 
 

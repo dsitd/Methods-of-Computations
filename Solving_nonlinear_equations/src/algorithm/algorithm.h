@@ -4,14 +4,18 @@
 #include "../equation.h"
 #include "../interval.h"
 
+#include <iostream>
+
 class algorithm {
 protected:
     Equation _equation;
 
 public:
-    explicit algorithm(const Equation& equation) : _equation(equation) {}
+    explicit algorithm(const Equation &equation) : _equation(equation) {}
+
     virtual ~algorithm() = default;
-    [[nodiscard]] virtual double solve(const std::pair<double, double>& segment, double epsilon) const = 0;
+
+    [[nodiscard]] virtual double solve(const std::pair<double, double> &segment, double epsilon) const = 0;
 };
 
 
