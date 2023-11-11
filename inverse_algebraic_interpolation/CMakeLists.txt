@@ -1,0 +1,4 @@
+add_executable(inverse_algebraic_interpolation
+        main.cpp src/IReverseInterpolator.h src/MonotoneReverseInterpolator/MonotoneReverseInterpolator.h src/ReverseInterpolator/ReverseInterpolator.cpp src/MonotoneReverseInterpolator/MonotoneReverseInterpolator.cpp)
+
+target_compile_features(inverse_algebraic_interpolation PRIVATE cxx_std_17)
