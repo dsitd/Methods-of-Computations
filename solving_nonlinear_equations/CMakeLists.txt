@@ -1,4 +1,4 @@
-add_executable(Solving_nonlinear_equations
+add_executable(solving_nonlinear_equations
         main.cpp
         src/equation.h
         src/interval.h
@@ -12,4 +12,4 @@ add_executable(Solving_nonlinear_equations
         src/algorithm/methods/SecantMethod.cpp
         src/algorithm/methods/SecantMethod.h)
 
-target_compile_features(Solving_nonlinear_equations PRIVATE cxx_std_17)
+target_compile_features(solving_nonlinear_equations PRIVATE cxx_std_17)
