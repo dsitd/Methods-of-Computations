@@ -2,51 +2,53 @@
 #define METHODS_OF_COMPUTATION_INTERVAL_H
 
 #include <vector>
-
-#include "equation.h"
+#include <functional>
 
 class Interval {
-    int32_t amount_splitting;
-    double left_border, right_border;
-    std::vector<std::pair<double, double>> segments;
+public:
+    Interval(double left_border_, double right_border_, int32_t amount_splitting_,
+             const std::function<double(double)> &f)
+            : left_border_(left_border_), right_border_(right_border_), amount_splitting_(amount_splitting_), f_(f) {
 
-    void separateRoots(const Equation &equation) {
-        double offset = (right_border - left_border) / static_cast<double>(amount_splitting), point = left_border;
+        if (left_border_ > right_border_) {
+            throw std::logic_error("left_border_ > right_border_");
+        }
+
+        separateRoots();
+    }
+
+    std::vector<std::pair<double, double>> getSegment() {
+        return segments_;
+    }
+
+    [[nodiscard]] double getLeftBorder() const {
+        return left_border_;
+    }
+
+    [[nodiscard]] double getRightBorder() const {
+        return right_border_;
+    }
+
+private:
+    void separateRoots() {
+        double offset = (right_border_ - left_border_) / static_cast<double>(amount_splitting_), point = left_border_;
         double multiplication_border;
 
-        while (point + offset <= right_border) {
-            multiplication_border = equation.f(point) * equation.f(point + offset);
+        while (point + offset <= right_border_) {
+            multiplication_border = f_(point) * f_(point + offset);
 
             if (multiplication_border <= 0) {
-                segments.emplace_back(point, point + offset);
+                segments_.emplace_back(point, point + offset);
             }
 
             point += offset;
         }
     }
 
-public:
-    Interval(double left_border, double right_border, int32_t amount_splitting, const Equation &equation)
-            : left_border(left_border), right_border(right_border), amount_splitting(amount_splitting) {
-
-        if (left_border > right_border) {
-            throw std::logic_error("left_border > right_border");
-        }
-
-        separateRoots(equation);
-    }
-
-    std::vector<std::pair<double, double>> getSegment() {
-        return segments;
-    }
-
-    double getLeftBorder() {
-        return left_border;
-    }
-
-    double getRightBorder() {
-        return right_border;
-    }
+    double left_border_, right_border_;
+    int32_t amount_splitting_;
+    std::vector<std::pair<double, double>> segments_;
+    std::function<double(double)> f_;
 };
 
 
