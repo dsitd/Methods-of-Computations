@@ -1,6 +1,5 @@
 add_executable(solving_nonlinear_equations
         main.cpp
-        src/equation.h
         src/interval.h
         src/algorithm/algorithm.h
         src/algorithm/methods/BisectionMethod.cpp

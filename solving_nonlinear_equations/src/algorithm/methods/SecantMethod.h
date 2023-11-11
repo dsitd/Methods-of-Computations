@@ -5,11 +5,11 @@
 
 class SecantMethod : public algorithm {
 public:
-    SecantMethod(const Equation &equation);
-
     ~SecantMethod() override = default;
 
-    [[nodiscard]] double solve(const std::pair<double, double> &segment, double epsilon) const override;
+    [[nodiscard]] double
+    solve(const std::pair<double, double> &segment, const std::vector<std::function<double(double)>> &functions,
+          double epsilon) const override;
 };
 
 
