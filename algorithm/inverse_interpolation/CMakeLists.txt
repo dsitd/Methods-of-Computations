@@ -1,15 +1,14 @@
 #####################################
 # Define Target Information
 #####################################
-set(TARGET_NAME interpolation)
+set(TARGET_NAME inverse_interpolation)
 
 set(TARGET_INCLUDE_DIR include)
 set(TARGET_SOURCE_DIR src)
 
 set(SRC_FILES
-        ${TARGET_SOURCE_DIR}/LagrangeMethod.cpp
-        ${TARGET_SOURCE_DIR}/NewtonMethod.cpp
-        ${TARGET_SOURCE_DIR}/utils/InterpolationCalculator.cpp
+        ${TARGET_SOURCE_DIR}/MonotoneReverseInterpolator.cpp
+        ${TARGET_SOURCE_DIR}/ReverseInterpolator.cpp
         )
 
 #####################################
@@ -29,6 +28,9 @@ target_include_directories(
         PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
+
+target_link_libraries(${TARGET_NAME} PUBLIC interpolation)
+target_link_libraries(${TARGET_NAME} PRIVATE solving_nonlinear_equations)
 
 set_target_properties(${TARGET_NAME} PROPERTIES
         LIBRARY_OUTPUT_DIRECTORY "${METHODS_OF_COMPUTATION_LIB_DIR}")

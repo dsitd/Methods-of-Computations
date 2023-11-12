@@ -9,19 +9,19 @@ double f(double x) {
     return sqrt(1 + x * x);
 }
 
-void outputInterpolation(double argument, double degree, const LagrangePolynom &lagrangeCalculator,
-                         const NewtonPolynom &newtonCalculator) {
-    double exactValue = f(argument);
-    double lagrangePolyniminalValue = lagrangeCalculator.GetInterpolatedValue(argument, degree);
-    double newtonPolyniminalValue = newtonCalculator.GetInterpolatedValue(argument, degree);
+void outputInterpolation(double argument, double degree, const LagrangePolynom &lagrange_polynom,
+                         const NewtonPolynom &newton_polynom) {
+    double exact_value = f(argument);
+    double lagrange_polynom_value = lagrange_polynom.GetInterpolatedValue(argument, degree);
+    double newton_polynom_value = newton_polynom.GetInterpolatedValue(argument, degree);
 
-    std::cout << "\nExact function value:                   " << exactValue << '\n';
+    std::cout << "\nExact function value:                   " << exact_value << '\n';
     std::cout << "--------\n";
-    std::cout << "Approximate Lagrange value:             " << lagrangePolyniminalValue << '\n';
-    std::cout << "Lagrange error:                         " << std::abs(lagrangePolyniminalValue - exactValue) << '\n';
+    std::cout << "Approximate Lagrange value:             " << lagrange_polynom_value << '\n';
+    std::cout << "Lagrange error:                         " << std::abs(lagrange_polynom_value - exact_value) << '\n';
     std::cout << "--------\n";
-    std::cout << "Approximate Newton value:               " << newtonPolyniminalValue << '\n';
-    std::cout << "Newton error:                           " << std::abs(newtonPolyniminalValue - exactValue) << '\n';
+    std::cout << "Approximate Newton value:               " << newton_polynom_value << '\n';
+    std::cout << "Newton error:                           " << std::abs(newton_polynom_value - exact_value) << '\n';
     std::cout << "---------------------------------------------------------------\n";
 }
 
@@ -31,28 +31,28 @@ int main() {
 
     double begin;
     double end;
-    int numPoints;
     double argument;
-    int degree;
+    double degree;
+    std::size_t points;
 
     std::cout << "Enter begin and end" << std::endl;
     std::cin >> begin >> end;
     std::cout << "Enter number of points -> ";
-    std::cin >> numPoints;
+    std::cin >> points;
 
-    auto lagrangeCalculator = LagrangePolynom(begin, end, numPoints, f);
-    auto newtonCalculator = NewtonPolynom(begin, end, numPoints, f);
+    auto lagrange_polynom = LagrangePolynom(begin, end, points, f);
+    auto newton_polynom = NewtonPolynom(begin, end, points, f);
 
     std::cout << "\nInterpolation table:\n";
-    lagrangeCalculator.PrintTable(std::cout);
+    lagrange_polynom.PrintTable(std::cout);
     std::cout << "\n---------------------------------------------------------------\n";
 
     while (true) {
         std::cout << "Enter polynom degree -> ";
         std::cin >> degree;
 
-        if (degree > numPoints) {
-            std::cout << "Degree must not be greater than " << numPoints << '\n';
+        if (static_cast<std::size_t>(degree) > points) {
+            std::cout << "Degree must not be greater than " << points << '\n';
             std::cout << "---------------------------------------------------------------\n";
             continue;
         }
@@ -60,7 +60,7 @@ int main() {
         std::cout << "Enter argument to calculate function -> ";
         std::cin >> argument;
 
-        outputInterpolation(argument, degree, lagrangeCalculator, newtonCalculator);
+        outputInterpolation(argument, degree, lagrange_polynom, newton_polynom);
     }
 
     return 0;

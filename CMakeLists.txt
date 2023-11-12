@@ -7,3 +7,4 @@ add_subdirectory(algorithm)
 
 add_subdirectory(solving_nonlinear_equations)
 add_subdirectory(algebraic_interpolation)
+add_subdirectory(inverse_algebraic_interpolation)

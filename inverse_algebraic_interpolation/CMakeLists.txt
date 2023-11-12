@@ -1,0 +1,3 @@
+add_executable(inverse_algebraic_interpolation main.cpp)
+target_compile_features(inverse_algebraic_interpolation PRIVATE cxx_std_17)
+target_link_libraries(inverse_algebraic_interpolation PRIVATE inverse_interpolation)

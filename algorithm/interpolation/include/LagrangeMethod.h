@@ -9,8 +9,8 @@ private:
     static double CalculateFundamentalPoly(double argument, double point, Table const &sorted_interpolation_table);
 
 public:
-    LagrangePolynom(double begin, double end, int numPoints, const std::function<double(double)> &func)
-            : InterpolationCalculator(begin, end, numPoints, func) {}
+    LagrangePolynom(double begin, double end, std::size_t points, const std::function<double(double)> &func)
+            : InterpolationCalculator(begin, end, points, func) {}
 
     ~LagrangePolynom() override = default;
 
