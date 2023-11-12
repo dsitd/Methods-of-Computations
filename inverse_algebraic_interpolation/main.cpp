@@ -34,11 +34,11 @@ int main() {
 
     double begin;
     double end;
-    std::size_t points;
     double value;
     double degree;
-    unsigned split_count;
     double eps;
+    unsigned split_count;
+    std::size_t points;
 
     std::cout << "Enter [begin; end] -> ";
     std::cin >> begin >> end;
