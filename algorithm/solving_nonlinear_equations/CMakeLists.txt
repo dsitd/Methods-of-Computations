@@ -1,15 +1,16 @@
 #####################################
 # Define Target Information
 #####################################
-set(TARGET_NAME Polynom)
+set(TARGET_NAME solving_nonlinear_equations)
 
 set(TARGET_INCLUDE_DIR include)
 set(TARGET_SOURCE_DIR src)
 
 set(SRC_FILES
-        ${TARGET_SOURCE_DIR}/LagrangeMethod.cpp
+        ${TARGET_SOURCE_DIR}/BisectionMethod.cpp
         ${TARGET_SOURCE_DIR}/NewtonMethod.cpp
-        ${TARGET_SOURCE_DIR}/utils/InterpolationCalculator.cpp
+        ${TARGET_SOURCE_DIR}/ModifiedNewtonMethod.cpp
+        ${TARGET_SOURCE_DIR}/SecantMethod.cpp
         )
 
 #####################################

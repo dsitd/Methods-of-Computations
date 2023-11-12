@@ -1,4 +1,4 @@
-#include "BisectionMethod.h"
+#include <BisectionMethod.h>
 
 double BisectionMethod::solve(const std::pair<double, double> &segment,
                               const std::vector<std::function<double(double)>> &functions, double epsilon) const {

@@ -1,8 +1,7 @@
 #ifndef METHODS_OF_COMPUTATION_MODIFIEDNEWTONMETHOD_H
 #define METHODS_OF_COMPUTATION_MODIFIEDNEWTONMETHOD_H
 
-#include "../algorithm.h"
-
+#include "utils/algorithm.h"
 
 class ModifiedNewtonMethod : public algorithm {
 public:

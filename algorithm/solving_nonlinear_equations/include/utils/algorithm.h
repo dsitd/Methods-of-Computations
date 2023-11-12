@@ -1,7 +1,7 @@
 #ifndef METHODS_OF_COMPUTATION_ALGORITHM_H
 #define METHODS_OF_COMPUTATION_ALGORITHM_H
 
-#include "../interval.h"
+#include "interval.h"
 
 #include <iostream>
 #include <vector>
