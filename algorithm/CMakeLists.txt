@@ -1,0 +1,2 @@
+add_subdirectory(interpolation)
+add_subdirectory(solving_nonlinear_equations)

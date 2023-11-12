@@ -1,4 +1,4 @@
-#include "LagrangeMethod.h"
+#include <LagrangeMethod.h>
 
 double LagrangePolynom::CalculateFundamentalPoly(double argument, double point,
                                                  Table const &sorted_interpolation_table) {

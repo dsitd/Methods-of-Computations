@@ -1,7 +1,7 @@
 #ifndef METHODS_OF_COMPUTATION_BISECTIONMETHOD_H
 #define METHODS_OF_COMPUTATION_BISECTIONMETHOD_H
 
-#include "../algorithm.h"
+#include "utils/algorithm.h"
 
 class BisectionMethod : public algorithm {
 

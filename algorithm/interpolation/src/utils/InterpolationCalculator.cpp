@@ -1,4 +1,4 @@
-#include "InterpolationCalculator.h"
+#include "utils/InterpolationCalculator.h"
 
 InterpolationCalculator::InterpolationCalculator(double begin, double end, std::size_t points,
                                                  const std::function<double(double)> &func)

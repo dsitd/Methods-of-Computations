@@ -1,8 +1,8 @@
 #ifndef METHODS_OF_COMPUTATION_NEWTONMETHOD_H
 #define METHODS_OF_COMPUTATION_NEWTONMETHOD_H
 
-#include "../../InterpolationCalculator/InterpolationCalculator.h"
-#include "../IPolynomCalculator.h"
+#include <utils/IPolynomCalculator.h>
+#include <utils/InterpolationCalculator.h>
 
 class NewtonPolynom : public InterpolationCalculator, public IPolynomCalculator {
 private:

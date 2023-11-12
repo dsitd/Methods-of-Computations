@@ -1,4 +1,4 @@
-#include "ModifiedNewtonMethod.h"
+#include <ModifiedNewtonMethod.h>
 
 double ModifiedNewtonMethod::solve(const std::pair<double, double> &segment,
                                    const std::vector<std::function<double(double)>> &functions, double epsilon) const {

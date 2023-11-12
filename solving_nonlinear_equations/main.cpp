@@ -3,11 +3,10 @@
 #include <memory>
 #include <vector>
 
-#include "src/interval.h"
-#include "src/algorithm/methods/BisectionMethod.h"
-#include "src/algorithm/methods/NewtonMethod.h"
-#include "src/algorithm/methods/ModifiedNewtonMethod.h"
-#include "src/algorithm/methods/SecantMethod.h"
+#include <BisectionMethod.h>
+#include <NewtonMethod.h>
+#include <ModifiedNewtonMethod.h>
+#include <SecantMethod.h>
 
 double f(double x) {
     return sqrt(4 * x + 7) - 3 * cos(x);

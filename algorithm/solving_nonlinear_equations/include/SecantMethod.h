@@ -1,7 +1,7 @@
 #ifndef METHODS_OF_COMPUTATION_SECANTMETHOD_H
 #define METHODS_OF_COMPUTATION_SECANTMETHOD_H
 
-#include "../algorithm.h"
+#include "utils/algorithm.h"
 
 class SecantMethod : public algorithm {
 public:
