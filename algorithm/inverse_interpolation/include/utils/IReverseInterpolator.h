@@ -5,7 +5,7 @@
 
 class IReverseInterpolator {
 public:
-    virtual std::vector<double> GetArguments(double functionValue, int degree) const = 0;
+    virtual std::vector<double> GetArguments(double value, double degree) const = 0;
 
     virtual ~IReverseInterpolator() = default;
 };

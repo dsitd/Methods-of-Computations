@@ -6,7 +6,7 @@
 
 class Interval {
 public:
-    Interval(double left_border_, double right_border_, int32_t amount_splitting_,
+    Interval(double left_border_, double right_border_, unsigned amount_splitting_,
              const std::function<double(double)> &f)
             : left_border_(left_border_), right_border_(right_border_), amount_splitting_(amount_splitting_), f_(f) {
 
@@ -46,7 +46,7 @@ private:
     }
 
     double left_border_, right_border_;
-    int32_t amount_splitting_;
+    unsigned amount_splitting_;
     std::vector<std::pair<double, double>> segments_;
     std::function<double(double)> f_;
 };
