@@ -1,4 +1,4 @@
-#include "NewtonMethod.h"
+#include <NewtonMethod.h>
 
 std::vector<double> NewtonPolynom::CreateDividedDiffTable(Table const &sorted_interpolation_table) {
     auto difference_product = [&](std::size_t i, std::size_t n) -> double {

@@ -1,11 +1,9 @@
 #include <iostream>
-#include <vector>
 #include <cmath>
-#include <functional>
 #include <sstream>
 
-#include "src/algorithm/LagrangeMethod/LagrangeMethod.h"
-#include "src/algorithm/NewtonMethod/NewtonMethod.h"
+#include <LagrangeMethod.h>
+#include <NewtonMethod.h>
 
 double f(double x) {
     return sqrt(1 + x * x);

@@ -1,8 +1,8 @@
 #ifndef METHODS_OF_COMPUTATION_LAGRANGEMETHOD_H
 #define METHODS_OF_COMPUTATION_LAGRANGEMETHOD_H
 
-#include "../../InterpolationCalculator/InterpolationCalculator.h"
-#include "../IPolynomCalculator.h"
+#include <utils/IPolynomCalculator.h>
+#include <utils/InterpolationCalculator.h>
 
 class LagrangePolynom : public InterpolationCalculator, public IPolynomCalculator {
 private:
